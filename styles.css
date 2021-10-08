@@ -1,7 +1,66 @@
+/* Police de charactere */
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+/* root = racine on peut stocker nos variable ici pour les utiliser plus facilement */
+:root{
+    --title: #f8c27a;
+    --textShadow:0 2px 2px rgba(0,0,0,.7);
+    --boxShadow:0 0px 10px rgba(0,0,0,.2);
+}
+/* reset css box sizing pour dimentionner  */
 *{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 body{
-    background-color: rgb(46, 48, 48);
+    font-size: 14px;
+    width: 100vw;
+    overflow: hidden;
+    height: 100vh;
+    /* racourci df
+    jcc
+    aic */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+}
+h1{
+    font-family: 'Luckiest Guy', cursive;
+    margin-bottom: 15px;
+    /* couleur a customiser */
+    color: #ffc31d;
+    /* rapelle de la variable text shadow de la root */
+    text-shadow: var(--textShadow);
+    /* display inline block(dib)  pour que l'ombre ne prenne pas toute la largeur*/
+    display: inline-block;
+}
+/* Icon importer du site Ion icon la balise sera ion-icon */
+ion-icon{
+    font-size: 50px;
+    fill: red;
+}
+/*                          class */
+.container{
+    background-color: rgba(255,255,255,0.2);
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: var(--boxShadow);
+}
+.vies{
+    margin: 10px;
+}
+/*------------------------------------- id */
+/* Formulaire */
+#inputBox{
+    background-color: #96e6a1;
+    padding: 15px;
+    border-radius: 5px;
+}
+#inputBox > label{
+    /* input mange la ligne */
+    display: block;
+    margin-bottom: 8px;
 }
