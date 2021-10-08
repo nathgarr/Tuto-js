@@ -1,4 +1,4 @@
-//Element du dom
+//Variable textuelle
 const divVies=document.querySelector('.vies');
 const message=document.getElementById('message');
 const Formulaire=document.getElementById('inputBox');
@@ -11,7 +11,7 @@ const body =document.getElementsByTagName('body')[0];
 const coeurVide='<ion-icon name="heart-outline"></ion-icon>';
 const coeurPlein ='<ion-icon name="heart"></ion-icon>';
 
-//Fond
+//Variable couleur
 const bgFroid ='linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%)';
 const bgTiède ='linear-gradient(120deg, #f6d365 0%, #fda085 100%)';
 const bgChaux='linear-gradient(to top, #f43b47 0%, #453a94 100%)';
@@ -29,6 +29,7 @@ const play = () =>{
     const randomNumber = Math.floor(Math.random() * 101);
     const totalVies=6;
     let vies=totalVies;
+    //préparation des variable coeur
     console.log(randomNumber);
     //Actualisation a chaque essai toute la logique
     Formulaire.addEventListener('submit', (e) =>{
@@ -42,43 +43,56 @@ const play = () =>{
         if(valeurInput === randomNumber){
             //changement de style du a la victoire
             body.style.backgroundImage=bgWin;
-            message.textContent=`BRAVO !!! le nombre était bien ${randomNumber}`
+            message.textContent=`BRAVO !!! le nombre était bien ${randomNumber}🥝🥝🥝`
             //si il veux rejouer
             rejouer.style.display="block"
             essayrBtn.setAttribute("disabled", "")
+            //block le bouton essay pour que le joueur ayant gagner
         }
         //!== différent de randomnumber
         if(valeurInput !== randomNumber){
             //intervale chaux froid
             if(randomNumber < valeurInput + 3 && randomNumber > valeurInput - 3){
+                //ajout de styles garce a javascript
                 body.style.backgroundImage=bgBrulant;
-                message.textContent="C'est Brûlant !!!";
+                //emoji =ctr+i
+                message.textContent="C'est Brûlant !!! 🔥🔥🔥";
             }
             else if (randomNumber < valeurInput + 6 && randomNumber > valeurInput - 6){
+                //ajout de styles garce a javascript
                 body.style.backgroundImage=bgChaux;
-                message.textContent="C'est Chaux ! ";
+                //emoji =ctr+i
+                message.textContent="C'est Chaux ! 🧯🧯🧯";
             }
             else if (randomNumber < valeurInput + 11 && randomNumber > valeurInput - 11){
+                //ajout de styles garce a javascript
                 body.style.backgroundImage=bgTiède;
-                message.textContent="C'est tiède ! ";
+                //emoji =ctr+i
+                message.textContent="C'est tiède ! 🤒🤒🤒";
             }
             else{
+                //ajout de styles garce a javascript
                 body.style.backgroundImage=bgFroid;
-                message.textContent="C'est Froid ";
+                //emoji =ctr+i
+                message.textContent="C'est Froid ❄️❄️❄️";
             }
             vies--;
+            //perte de vie a chaque essay rater
             verifyLoose();
+            //active la focntion qui permet de deduire si un coeur et perdu ou non
         }
         actualiseCoeur(vies);
     })
     //verification de defaite
     const verifyLoose=()=>{
         if(vies===0){
+            //ajout de styles garce a javascript
             body.style.backgroundImage=bgloose;
             body.style.color='#990000'
             //desactivation bouton essay
             essayrBtn.setAttribute("disabled", "")
-            message.textContent = `Vous avez perdu. La réponse était ${randomNumber}`
+            //générateur de nombre randome
+            message.textContent = `Vous avez perdu. La réponse était ${randomNumber}😥😥😥`
             //Activation button rejouer
             rejouer.style.display="block";
         }
@@ -88,17 +102,21 @@ const play = () =>{
         divVies.innerHTML="";
         let tableauDeVies=[];
         for(let i = 0; i < vies; i++){
+            //génération coeur remplit
             tableauDeVies.push(coeurPlein);
         }
         for(let i = 0; i < totalVies-vies; i++){
+            //génération coeur vide=perdu
             tableauDeVies.push(coeurVide);
         }
         tableauDeVies.forEach(coeur =>{
+            //activation de la génération de coeur
             divVies.innerHTML+=coeur;
         })
     }
     actualiseCoeur(vies);
     rejouer.addEventListener('click', () => {
+        //retirer le message
         message.style.display='none';
         //force le navigateur a actualiser la page web pour changer le nombre et redonner les vie
         document.location.reload(true);
