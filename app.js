@@ -19,4 +19,36 @@ const bgBrulant='linear-gradient(to right, #ff8177 0%, #b12a5b 100%)';
 
 const bgWin="linear-gradient(-225deg,#231557 0%, #44107A 29%, #FF1361 67%, #FFF800 100%)";
 const bgloose='linear-gradient(to top, #505285 0%, #585e92 12%, #65689f 25%, #7474b0 37%, #7e7ebb 50%, #8389c7 62%, #9795d4 75%, #a2a1dc 87%, #b5aee4 100%)'
-//preparation variable
+
+//logique Play
+
+const play = () =>{
+
+    //nb aleatoire
+    //mathfloor pour arondir et math/random pour un nombre a virgule compri entre 0 et 1 exclu donc on arrondi
+    const randomNumber = Math.floor(Math.random() * 101);
+    const totalVies=6;
+    let vies=totalVies;
+    console.log(randomNumber);
+    //Actualisation a chaque essai toute la logique
+    Formulaire.addEventListener('submit', (e) =>{
+        //empeche la modification du nombre a l'actualisation/envoi du formulaire
+        e.preventDefault()
+        //Ne pas oublier de convertir les lettre en nombre
+        const valeurInput=parseInt(Input.value);
+        //si l'utilisateur triche le jeux se ferme
+        if(valeurInput < 0 || valeurInput > 100) return;
+        //si le joueur gagne il se passe cela
+        if(valeurInput === randomNumber){
+            //changement de style du a la victoire
+            body.style.backgroundImage=bgWin;
+            message.textContent=`BRAVO !!! le nombre était bien ${randomNumber}`
+            //si il veux rejouer
+            rejouer.style.display="block"
+        }
+        //!== différent de randomnumber
+        if(valeurInput !== randomNumber){
+
+        }
+    })
+}
