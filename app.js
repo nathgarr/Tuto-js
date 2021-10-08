@@ -20,7 +20,7 @@ const bgBrulant='linear-gradient(to right, #ff8177 0%, #b12a5b 100%)';
 const bgWin="linear-gradient(-225deg,#231557 0%, #44107A 29%, #FF1361 67%, #FFF800 100%)";
 const bgloose='linear-gradient(to top, #505285 0%, #585e92 12%, #65689f 25%, #7474b0 37%, #7e7ebb 50%, #8389c7 62%, #9795d4 75%, #a2a1dc 87%, #b5aee4 100%)'
 
-//logique Play
+//logique Play fonction flécher
 
 const play = () =>{
 
@@ -48,7 +48,36 @@ const play = () =>{
         }
         //!== différent de randomnumber
         if(valeurInput !== randomNumber){
-
+            //intervale chaux froid
+            if(randomNumber < valeurInput + 3 && randomNumber > valeurInput - 3){
+                body.style.backgroundImage=bgBrulant;
+                message.textContent="C'est Brûlant !!! :fire: :fire: :fire: ";
+            }
+            else if (randomNumber < valeurInput + 6 && randomNumber > valeurInput - 6){
+                body.style.backgroundImage=bgChaux;
+                message.textContent="C'est Chaux ! :fire: ";
+            }
+            else if (randomNumber < valeurInput + 11 && randomNumber > valeurInput - 11){
+                body.style.backgroundImage=bgTiède;
+                message.textContent="C'est tiède ! :neutrale_face: ";
+            }
+            else{
+                body.style.backgroundImage=bgFroid;
+                message.textContent="C'est Froid  :snoflake: ";
+            }
+            vies--;
+            verifyLoose();
         }
+
     })
+    const verifyLoose=()=>{
+        if(vies===0){
+            body.style.backgroundImage=bgloose;
+            body.style.color='#990000'
+            //desactivation bouton essay
+            essayrBtn.setAttribute("disabled", "")
+            message.textContent = `Vous avez perdu. La réponse était ${randomNumber}`
+            rejouer.style.display="block";
+        }
+    }
 }
