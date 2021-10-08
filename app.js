@@ -44,6 +44,8 @@ const play = () =>{
             //changement de style du a la victoire
             body.style.backgroundImage=bgWin;
             message.textContent=`BRAVO !!! le nombre était bien ${randomNumber}🥝🥝🥝`
+            let input = document.getElementById('inputBox')
+               input.style.backgroundImage=bgWin;
             //si il veux rejouer
             rejouer.style.display="block"
             essayrBtn.setAttribute("disabled", "")
@@ -55,24 +57,32 @@ const play = () =>{
             if(randomNumber < valeurInput + 3 && randomNumber > valeurInput - 3){
                 //ajout de styles garce a javascript
                 body.style.backgroundImage=bgBrulant;
+                let input = document.getElementById('inputBox')
+               input.style.backgroundImage=bgBrulant;
                 //emoji =ctr+i
                 message.textContent="C'est Brûlant !!! 🔥🔥🔥";
             }
             else if (randomNumber < valeurInput + 6 && randomNumber > valeurInput - 6){
                 //ajout de styles garce a javascript
                 body.style.backgroundImage=bgChaux;
+               let input = document.getElementById('inputBox')
+               input.style.backgroundImage=bgChaux;
                 //emoji =ctr+i
                 message.textContent="C'est Chaux ! 🧯🧯🧯";
             }
             else if (randomNumber < valeurInput + 11 && randomNumber > valeurInput - 11){
                 //ajout de styles garce a javascript
                 body.style.backgroundImage=bgTiède;
+                let input = document.getElementById('inputBox')
+               input.style.backgroundImage=bgTiède;
                 //emoji =ctr+i
                 message.textContent="C'est tiède ! 🤒🤒🤒";
             }
             else{
                 //ajout de styles garce a javascript
                 body.style.backgroundImage=bgFroid;
+                let input = document.getElementById('inputBox')
+               input.style.backgroundImage=bgFroid;
                 //emoji =ctr+i
                 message.textContent="C'est Froid ❄️❄️❄️";
             }
@@ -88,6 +98,8 @@ const play = () =>{
         if(vies===0){
             //ajout de styles garce a javascript
             body.style.backgroundImage=bgloose;
+            let input = document.getElementById('inputBox')
+               input.style.backgroundImage=bgloose;
             body.style.color='#990000'
             //desactivation bouton essay
             essayrBtn.setAttribute("disabled", "")
