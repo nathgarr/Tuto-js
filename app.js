@@ -45,6 +45,7 @@ const play = () =>{
             message.textContent=`BRAVO !!! le nombre était bien ${randomNumber}`
             //si il veux rejouer
             rejouer.style.display="block"
+            essayrBtn.setAttribute("disabled", "")
         }
         //!== différent de randomnumber
         if(valeurInput !== randomNumber){
@@ -97,5 +98,10 @@ const play = () =>{
         })
     }
     actualiseCoeur(vies);
+    rejouer.addEventListener('click', () => {
+        message.style.display='none';
+        //force le navigateur a actualiser la page web pour changer le nombre et redonner les vie
+        document.location.reload(true);
+    })
 }
 play();
