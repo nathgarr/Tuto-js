@@ -32,6 +32,13 @@ body{
     font-family: sans-serif;
     background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
 }
+input{
+    padding: 35px;
+    font-size: 35px;
+}
+label{
+    font-size: 22px;
+}
 h1{
     font-family: 'Luckiest Guy', cursive;
     margin-bottom: 15px;
@@ -71,6 +78,9 @@ button:hover{
 p#message{
     margin: 20px auto 0 auto;
 }
+#message{
+    font-size: 22px;
+}
 /*                          class */
 /* la boite globale */
 .container{
@@ -107,6 +117,11 @@ p#message{
     font-size: 20px;
     margin-top: 5px;
 }
+#essayerBtn{
+    padding: 25px;
+    font-size: 25px;
+    color: goldenrod;
+}
 #pacman{
     display: none;
 }
@@ -140,6 +155,9 @@ p#message{
     padding: 20px;
     font-size: 25px;
     color: goldenrod;
+}
+#Txt{
+    font-size: 22px;
 }
 @media(max-width: 1200px){
     ion-icon{
@@ -176,6 +194,17 @@ p#message{
     label{
         font-size: 25px;
     } 
+    #essayerBtn{
+        padding: 20px;
+        font-size: 20px;
+    }
+    #restart{
+        padding: 20px;
+        font-size: 20px;
+    }
+    input{
+        font-size: 25px;
+    }
 }
 @media (max-width:768px){
     ion-icon{
@@ -215,6 +244,17 @@ p#message{
     label{
         font-size: 20px;
     }
+    #essayerBtn{
+        padding: 10px;
+        font-size: 16px;
+    }
+    #restart{
+        padding: 10px;
+        font-size: 16px;
+    }
+    input{
+        font-size: 16px;
+    }
 }
 @media (max-width:576px){
     ion-icon{
@@ -252,6 +292,17 @@ p#message{
         font-size: 10px;
     }
     label{
+        font-size: 10px;
+    }
+    #essayerBtn{
+        padding: 10px;
+        font-size: 10px;
+    }
+    #restart{
+        padding: 10px;
+        font-size: 10px;
+    }
+    input{
         font-size: 10px;
     }
 }
