@@ -21,39 +21,46 @@ const bgloose='linear-gradient(to top, #505285 0%, #585e92 12%, #65689f 25%, #74
 
 //logique Play fonction flécher
 const utilisator=document.getElementById('Choixutilisateur')
-const jeux=document.getElementById('jeux')
+const jeux=document.getElementById('pacman')
 const choix=document.getElementById('choix')
 const facile =document.getElementById('facile')
 const normale =document.getElementById('normale')
 const difficle =document.getElementById('Hard')
 const retour =document.getElementById('restart')
 const choice= "";
+const nombreListe=document.getElementById('nbl')
+const titr= document.getElementById('dif')
 
 function choixUtilisateur(){
      facile.addEventListener('click', () =>{
         choix.style.display="none";
         jeux.style.display="block";
+        titr.innerHTML=`Difficulter Facile`
         var choice=9;
         play(choice);
     })
     normale.addEventListener('click', ()=>{
         choix.style.display="none";
         jeux.style.display="block";
+        titr.innerHTML=`Difficulter Moyen`
         var choice=5;
         play(choice);
     })
     difficle.addEventListener('click', ()=> {
         choix.style.display="none";
         jeux.style.display="block";
+        titr.innerHTML=`Difficulter Difficile`
         var choice=3;
         play(choice);
     })
 }
 choixUtilisateur();
 const play = (choice) =>{
+    retour.addEventListener('click', () => {
+        document.location.reload(true);
+    })
     const totalVies= choice;
     //nb aleatoire
-    
     //mathfloor pour arondir et math/random pour un nombre a virgule compri entre 0 et 1 exclu donc on arrondi
     const randomNumber = Math.floor(Math.random() * 101);
     let vies=totalVies;
@@ -79,6 +86,7 @@ const play = (choice) =>{
             essayrBtn.style.display="none";
             essayrBtn.setAttribute("disabled", "")
             //block le bouton essay pour que le joueur ayant gagner
+            retour.style.display="none";
         }
         //!== différent de randomnumber
         if(valeurInput !== randomNumber){
@@ -116,14 +124,21 @@ const play = (choice) =>{
                 message.textContent="C'est Froid ❄️❄️❄️";
             }
             vies--;
-            retour.addEventListener('click', () => {
-                choixUtilisateur();
-            })
             //perte de vie a chaque essay rater
             verifyLoose();
             //active la focntion qui permet de deduire si un coeur et perdu ou non
         }
-        
+        const saisinb=(valeurInput)=>{
+            // nombreListe.innerHTML="";
+            let tableauNombre=[];
+            for(let i = 0; i < 1; i++){
+            tableauNombre.push("😥"+valeurInput+" ")
+            }
+            tableauNombre.forEach(valeurInput =>{
+                nombreListe.innerHTML+=valeurInput;
+            })
+        }
+        saisinb(valeurInput,vies);
         actualiseCoeur(vies);
     })
     //verification de defaite
@@ -141,6 +156,7 @@ const play = (choice) =>{
             message.textContent = `Vous avez perdu. La réponse était ${randomNumber}😥😥😥`
             //Activation button rejouer
             rejouer.style.display="block";
+            retour.style.display="none";
         }
     }
     //tableau générateur de coeur
@@ -160,7 +176,7 @@ const play = (choice) =>{
             divVies.innerHTML+=coeur;
         })
         let Txt = document.getElementById('Txt');
-            Txt.textContent = `Vous avez ${vies} pv bon courage chevalier tuon ce dragon`
+            Txt.textContent = `Vous avez ${vies} pv bon courage chevalier tuon ce dragon`;
     }
     actualiseCoeur(vies);
     rejouer.addEventListener('click', () => {

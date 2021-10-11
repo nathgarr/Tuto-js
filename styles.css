@@ -12,6 +12,11 @@
     margin: 0;
     box-sizing: border-box;
 }
+h2{
+    color: purple;
+    text-shadow: var(--textShadow);
+    margin-bottom: 15px;
+}
 body{
     font-size: 14px;
     width: 100vw;
@@ -30,7 +35,7 @@ h1{
     font-family: 'Luckiest Guy', cursive;
     margin-bottom: 15px;
     /* couleur a customiser */
-    color: #ffc31d;
+    color: purple;
     /* rapelle de la variable text shadow de la root */
     text-shadow: var(--textShadow);
     /* display inline block(dib)  pour que l'ombre ne prenne pas toute la largeur*/
@@ -53,7 +58,7 @@ button{
 /* button style */
 button{
     background-color: teal;
-    color: #ffffff;
+    color: purple;
     cursor: pointer;
     transition: all 0.2s;
 }
@@ -101,13 +106,21 @@ p#message{
     font-size: 20px;
     margin-top: 5px;
 }
-#jeux{
+#pacman{
     display: none;
+}
+#difficulter{
+    margin-bottom: 25px;
+    padding: 15px;
 }
 .btn{
     padding: 25px;
     color: goldenrod;
     font-size: 20px;
+}
+#liste{
+    margin-top: 25px;
+    padding: 15px;
 }
 #Choixutilisateur{
     display: flex;
