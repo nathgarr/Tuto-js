@@ -6,7 +6,6 @@ const Input=document.getElementById('number');
 const essayrBtn=document.getElementById('essayerBtn');
 const rejouer=document.getElementById('rejouer');
 const body =document.getElementsByTagName('body')[0];
-
 //Modèle de coeur
 const coeurVide='<ion-icon name="heart-outline"></ion-icon>';
 const coeurPlein ='<ion-icon name="heart"></ion-icon>';
@@ -21,13 +20,42 @@ const bgWin="linear-gradient(-225deg,#231557 0%, #44107A 29%, #FF1361 67%, #FFF8
 const bgloose='linear-gradient(to top, #505285 0%, #585e92 12%, #65689f 25%, #7474b0 37%, #7e7ebb 50%, #8389c7 62%, #9795d4 75%, #a2a1dc 87%, #b5aee4 100%)'
 
 //logique Play fonction flécher
+const utilisator=document.getElementById('Choixutilisateur')
+const jeux=document.getElementById('jeux')
+const choix=document.getElementById('choix')
+const facile =document.getElementById('facile')
+const normale =document.getElementById('normale')
+const difficle =document.getElementById('Hard')
+const retour =document.getElementById('restart')
+const choice= "";
 
-const play = () =>{
-
+function choixUtilisateur(){
+     facile.addEventListener('click', () =>{
+        choix.style.display="none";
+        jeux.style.display="block";
+        var choice=9;
+        play(choice);
+    })
+    normale.addEventListener('click', ()=>{
+        choix.style.display="none";
+        jeux.style.display="block";
+        var choice=5;
+        play(choice);
+    })
+    difficle.addEventListener('click', ()=> {
+        choix.style.display="none";
+        jeux.style.display="block";
+        var choice=3;
+        play(choice);
+    })
+}
+choixUtilisateur();
+const play = (choice) =>{
+    const totalVies= choice;
     //nb aleatoire
+    
     //mathfloor pour arondir et math/random pour un nombre a virgule compri entre 0 et 1 exclu donc on arrondi
     const randomNumber = Math.floor(Math.random() * 101);
-    const totalVies=6;
     let vies=totalVies;
     //préparation des variable coeur
     console.log(randomNumber);
@@ -88,10 +116,14 @@ const play = () =>{
                 message.textContent="C'est Froid ❄️❄️❄️";
             }
             vies--;
+            retour.addEventListener('click', () => {
+                choixUtilisateur();
+            })
             //perte de vie a chaque essay rater
             verifyLoose();
             //active la focntion qui permet de deduire si un coeur et perdu ou non
         }
+        
         actualiseCoeur(vies);
     })
     //verification de defaite
@@ -127,6 +159,8 @@ const play = () =>{
             //activation de la génération de coeur
             divVies.innerHTML+=coeur;
         })
+        let Txt = document.getElementById('Txt');
+            Txt.textContent = `Vous avez ${vies} pv bon courage chevalier tuon ce dragon`
     }
     actualiseCoeur(vies);
     rejouer.addEventListener('click', () => {
@@ -136,4 +170,4 @@ const play = () =>{
         document.location.reload(true);
     })
 }
-play();
+// play();

@@ -98,6 +98,41 @@ p#message{
 /* astuce pour le joueur */
 #details{
     font-weight: bold;
-    font-size: 6px;
+    font-size: 20px;
     margin-top: 5px;
+}
+#jeux{
+    display: none;
+}
+.btn{
+    padding: 25px;
+    color: goldenrod;
+    font-size: 20px;
+}
+#Choixutilisateur{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+@media(max-width: 1200px){
+    ion-icon{
+        font-size: 40px;
+    }
+    h1{
+        font-size: 35px;
+    }
+    #details{
+        font-size: 18px;
+    }
+}
+@media (max-width:768px){
+    ion-icon{
+        font-size: 20px;
+    }
+    h1{
+        font-size: 20px;
+    }
+    #details{
+        font-size: 10px;
+    }
 }

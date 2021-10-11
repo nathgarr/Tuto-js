@@ -10,12 +10,28 @@
     </head>
     <body>
         <!-- fenêtre de jeux -->
-        <div class="container">
+        <div class="container" id="choix">
+            <h1>
+                Choisisser la dificulter entre Facile/Moyen/Difficile
+            </h1>
+            <div id="Choixutilisateur">
+               <button class="btn" id="facile">
+                    Facile
+               </button>
+                <button class="btn" id="normale">
+                 Normale
+                </button>
+                <button class="btn" id="Hard">
+                 Difficile
+                </button> 
+            </div>
+        </div>
+        <div class="container" id="jeux">
             <h1>
                 Trouve le nombre !
             </h1>
-            <p>
-                Trouve le bon nombre entre 0 et 100. Tu as 6 essais !
+            <p id="Txt">
+                Vous avez 6 pv bon courage chevalier
             </p>
             <!-- Boite contenant les coeur ou les vie de l'utilisateur -->
             <div class="vies">
@@ -33,6 +49,7 @@
                 <!-- petit message -->
                 <p id="message">Tu peux le faire je croit en toi 🤞🤞🤞</p>
                 <!-- btn rejouer a la fin du jeux -->
+                <button id="restart">Retour</button>
                 <button id="rejouer">Rejouer ?</button>
             </form>
             <!-- message in dicatif chaux/frois 
