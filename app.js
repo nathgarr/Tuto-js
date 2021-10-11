@@ -47,7 +47,8 @@ const play = () =>{
             let input = document.getElementById('inputBox')
                input.style.backgroundImage=bgWin;
             //si il veux rejouer
-            rejouer.style.display="block"
+            rejouer.style.display="block";
+            essayrBtn.style.display="none";
             essayrBtn.setAttribute("disabled", "")
             //block le bouton essay pour que le joueur ayant gagner
         }
@@ -102,7 +103,8 @@ const play = () =>{
                input.style.backgroundImage=bgloose;
             body.style.color='#990000'
             //desactivation bouton essay
-            essayrBtn.setAttribute("disabled", "")
+            // essayrBtn.setAttribute("disabled", "")
+            essayrBtn.style.display="none";
             //générateur de nombre randome
             message.textContent = `Vous avez perdu. La réponse était ${randomNumber}😥😥😥`
             //Activation button rejouer

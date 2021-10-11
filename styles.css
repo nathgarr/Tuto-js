@@ -39,7 +39,8 @@ h1{
 /* Icon importer du site Ion icon la balise sera ion-icon */
 ion-icon{
     font-size: 50px;
-    fill: red;
+    fill: black;
+    border-color: black;
 }
 /* pour travail sur des balise qui doivent avoir le même styles on utilise , */
 input,
