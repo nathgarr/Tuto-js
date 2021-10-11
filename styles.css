@@ -15,6 +15,7 @@
 h2{
     color: purple;
     text-shadow: var(--textShadow);
+    font-size: 30px;
     margin-bottom: 15px;
 }
 body{
@@ -40,6 +41,7 @@ h1{
     text-shadow: var(--textShadow);
     /* display inline block(dib)  pour que l'ombre ne prenne pas toute la largeur*/
     display: inline-block;
+    font-size: 35px;
 }
 /* Icon importer du site Ion icon la balise sera ion-icon */
 ion-icon{
@@ -58,7 +60,6 @@ button{
 /* button style */
 button{
     background-color: teal;
-    color: purple;
     cursor: pointer;
     transition: all 0.2s;
 }
@@ -109,14 +110,19 @@ p#message{
 #pacman{
     display: none;
 }
+#boxi{
+    display: flex;
+    align-items: center;
+}
 #difficulter{
-    margin-bottom: 25px;
+    margin-right: 50px;
     padding: 15px;
+    height: 25%;
 }
 .btn{
-    padding: 25px;
+    padding: 35px;
     color: goldenrod;
-    font-size: 20px;
+    font-size: 35px;
 }
 #liste{
     margin-top: 25px;
@@ -127,25 +133,125 @@ p#message{
     justify-content: space-evenly;
     align-items: center;
 }
+#choix{
+    width: 90%;
+}
+#restart{
+    padding: 20px;
+    font-size: 25px;
+    color: goldenrod;
+}
 @media(max-width: 1200px){
+    ion-icon{
+        font-size: 50px;
+    }
+    h1{
+        font-size: 30px;
+    }
+    #details{
+        font-size: 22px;
+    }
+    .btn{
+        padding: 22px;
+        margin: auto;
+        font-size: 22px;
+    }
+    #choix{
+        width: 90%;
+    }
+    #difficulter{
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+    #jeux{
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+    #Txt{
+        font-size: 25px;
+    }
+    #message{
+        font-size: 25px;
+    }
+    label{
+        font-size: 25px;
+    } 
+}
+@media (max-width:768px){
     ion-icon{
         font-size: 40px;
     }
     h1{
-        font-size: 35px;
+        font-size: 20px;
     }
-    #details{
+    h2{
         font-size: 18px;
     }
+    .btn{
+        padding: 16px;
+        margin: auto;
+        font-size: 16px;
+    }
+    #choix{
+        width: 90%;
+    }
+    #details{
+        font-size: 16px;
+    }
+    #boxi{
+        flex-direction: column;
+        justify-content: center;
+    }
+    #difficulter{
+        margin: 0;
+        margin-bottom: 15px;
+    }
+    #Txt{
+        font-size: 20px;
+    } 
+    #message{
+        font-size: 20px;
+    }
+    label{
+        font-size: 20px;
+    }
 }
-@media (max-width:768px){
+@media (max-width:576px){
     ion-icon{
         font-size: 20px;
     }
     h1{
-        font-size: 20px;
+        font-size: 12px;
+    }
+    h2{
+        font-size: 11px;
+    }
+    .btn{
+        padding: 10px;
+        margin: auto;
+        font-size: 10px;
+    }
+    #choix{
+        width: 90%;
     }
     #details{
+        font-size: 10px;
+    }
+    #boxi{
+        flex-direction: column;
+        justify-content: center;
+    }
+    #difficulter{
+        margin: 0;
+        margin-bottom: 15px;
+    }
+    #Txt{
+        font-size: 10px;
+    }
+    #message{
+        font-size: 10px;
+    }
+    label{
         font-size: 10px;
     }
 }

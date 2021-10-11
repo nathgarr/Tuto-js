@@ -15,7 +15,7 @@
                 Choisisser la dificulter entre Facile/Moyen/Difficile
             </h1>
             <h2>
-                Bienvenue au nombre mysterieux trouver le pour sauver le royaume du dragon démoniaque Bahamot
+                Bienvenue au nombre mysterieux trouver le bon nombres pour sauver le royaume du dragon démoniaque Bahamot
             </h2>
             <div id="Choixutilisateur">
                <button class="btn" id="facile">
@@ -30,48 +30,52 @@
             </div>
         </div>
         <div id="pacman">
-            <div class="container" id="difficulter">
-                <h1 id="dif">
+            <div id="boxi">
+                <div class="container" id="difficulter">
+                    <h1 id="dif">
 
-                </h1>
-            </div>
-            <div class="container" id="jeux">
-                <h1>
-                    Trouve le nombre !
-                </h1>
-                <p id="Txt">
-                    Vous avez 6 pv bon courage chevalier
-                </p>
-                <!-- Boite contenant les coeur ou les vie de l'utilisateur -->
-                <div class="vies">
-                    <ion-icon name="heart-outline"></ion-icon>
-                    <ion-icon name="heart"></ion-icon>
-                </div>
-                <!-- formulaire pour pouvoir choisir le nombre et le transmetre en résultat -->
-                <form id="inputBox">
-                    <!-- le même id pour pouvoir cliker et atterir dans le input -->
-                    <label for="number">Entrez un nombre :</label>
-                    <!-- définition des nombre possible dans le jeux l'utilisateur et obliger d'entrer un nombre-->
-                    <input type="number" id="number" min="0" max="100" required>
-                    <!-- type submit pour envoyer mon fromulaire -->
-                    <button type="submit" id="essayerBtn">Essayer</button>
-                    <!-- petit message -->
-                    <p id="message">Tu peux le faire je croit en toi 🤞🤞🤞</p>
-                    <!-- btn rejouer a la fin du jeux -->
+                    </h1>
                     <button id="restart">Niveaux</button>
-                    <button id="rejouer">Rejouer ?</button>
-                </form>
-                <!-- message in dicatif chaux/frois 
-                en html plsu ou moin secrit &plusmn-->
-                <p id="details">Brûlant=&plusmn; 2; Chaud = &plusmn; 5; Tiède = &plusmn; 10;Froid = + de 10.</p>
-            </div>
-            <div class="container" id="liste">
-                <h2>
-                    Liste de nombre 
-                </h2>
-                <ul>
-                    <li id="nbl"></li>
-                </ul>
+                    <p id="details">
+                        Brûlant=&plusmn; 2; Chaud = &plusmn; 5; Tiède = &plusmn; 10;Froid = + de 10.
+                    </p>
+                </div> 
+                <div class="container" id="jeux">
+                    <h1>
+                        Trouve le nombre !
+                    </h1>
+                    <p id="Txt">
+                        Vous avez 6 pv bon courage chevalier
+                    </p>
+                    <!-- Boite contenant les coeur ou les vie de l'utilisateur -->
+                    <div class="vies">
+                        <ion-icon name="heart-outline"></ion-icon>
+                        <ion-icon name="heart"></ion-icon>
+                    </div>
+                    <!-- formulaire pour pouvoir choisir le nombre et le transmetre en résultat -->
+                    <form id="inputBox">
+                        <!-- le même id pour pouvoir cliker et atterir dans le input -->
+                        <label for="number">Entrez un nombre :</label>
+                        <!-- définition des nombre possible dans le jeux l'utilisateur et obliger d'entrer un nombre-->
+                        <input type="number" id="number" min="0" max="100" required>
+                        <!-- type submit pour envoyer mon fromulaire -->
+                        <button type="submit" id="essayerBtn">Essayer</button>
+                        <!-- petit message -->
+                        <p id="message">Tu peux le faire je croit en toi 🤞🤞🤞</p>
+                        <!-- btn rejouer a la fin du jeux -->
+                        <button id="rejouer">Rejouer ?</button>
+                    </form>
+                    <!-- message in dicatif chaux/frois 
+                    en html plsu ou moin secrit &plusmn-->
+                <div class="container" id="liste">
+                    <h2>
+                        Liste de nombre 
+                    </h2>
+                    <ul>
+                        <li id="nbl"></li>
+                    </ul>
+                </div>
+                </div> 
             </div>
         </div>
         <script src="./app.js"></script>
