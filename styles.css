@@ -5,6 +5,10 @@
     --title: #f8c27a;
     --textShadow:0 2px 2px rgba(0,0,0,.7);
     --boxShadow:0 0px 10px rgba(0,0,0,.2);
+    --btnColor: theme;
+    --btnbg:rgba(24, 23, 23, 0.849);
+    --btndark:rgb(36, 35, 35);
+    --textcolor:Orange;
 }
 /* reset css box sizing pour dimentionner  */
 *{
@@ -13,8 +17,8 @@
     box-sizing: border-box;
 }
 h2{
-    color: purple;
     text-shadow: var(--textShadow);
+    color: var(--textcolor);
     font-size: 30px;
     margin-bottom: 15px;
 }
@@ -39,11 +43,19 @@ input{
 label{
     font-size: 22px;
 }
+p{
+    color: var(--textcolor);
+    text-shadow: var(--textShadow);
+}
+h3{
+    color: var(--textcolor);
+    text-shadow: var(--textShadow);
+}
 h1{
+    color: var(--textcolor);
     font-family: 'Luckiest Guy', cursive;
     margin-bottom: 15px;
     /* couleur a customiser */
-    color: purple;
     /* rapelle de la variable text shadow de la root */
     text-shadow: var(--textShadow);
     /* display inline block(dib)  pour que l'ombre ne prenne pas toute la largeur*/
@@ -53,8 +65,8 @@ h1{
 /* Icon importer du site Ion icon la balise sera ion-icon */
 ion-icon{
     font-size: 50px;
-    fill: black;
-    border-color: black;
+    fill: red;
+    border-color: red;
 }
 /* pour travail sur des balise qui doivent avoir le même styles on utilise , */
 input,
@@ -94,6 +106,29 @@ p#message{
 .vies{
     margin: 10px;
 }
+/* theme de couleur light and dark*/
+.theme{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+#Dark{
+    background-color: rgba(24, 23, 23, 0.849);
+}
+#Light{
+    background-color: rgb(216, 230, 241);
+}
+.darkTheme{
+    background-color: black !important;
+    color: rgb(160, 28, 54) !important;
+    background-image: none !important;
+}
+.lightTheme{
+    background-color: aliceblue !important;
+    color: rgba(253, 253, 205, 0.753) !important;
+    background-image: none !important;
+}
 /*------------------------------------- id */
 /* Formulaire */
 #inputBox{
@@ -120,7 +155,8 @@ p#message{
 #essayerBtn{
     padding: 25px;
     font-size: 25px;
-    color: goldenrod;
+    color: var(--btnColor);
+    background-color: var(--btnbg);
 }
 #pacman{
     display: none;
@@ -136,7 +172,8 @@ p#message{
 }
 .btn{
     padding: 35px;
-    color: goldenrod;
+    color: var(--btnColor);
+    background-color: var(--btnbg);
     font-size: 35px;
 }
 #liste{
@@ -154,7 +191,8 @@ p#message{
 #restart{
     padding: 20px;
     font-size: 25px;
-    color: goldenrod;
+    color: var(--btnColor);
+    background-color: var(--btnbg);
 }
 #Txt{
     font-size: 22px;

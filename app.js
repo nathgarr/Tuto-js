@@ -97,7 +97,7 @@ const play = (choice) =>{
                 let input = document.getElementById('inputBox')
                input.style.backgroundImage=bgBrulant;
                 //emoji =ctr+i
-                message.textContent="C'est Brûlant !!! 🔥🔥🔥";
+                message.textContent="C'est Brûlant !!! ♨️♨️♨️";
             }
             else if (randomNumber < valeurInput + 6 && randomNumber > valeurInput - 6){
                 //ajout de styles garce a javascript
@@ -105,7 +105,7 @@ const play = (choice) =>{
                let input = document.getElementById('inputBox')
                input.style.backgroundImage=bgChaux;
                 //emoji =ctr+i
-                message.textContent="C'est Chaux ! 🧯🧯🧯";
+                message.textContent="C'est Chaux ! 🧨🧨🧨";
             }
             else if (randomNumber < valeurInput + 11 && randomNumber > valeurInput - 11){
                 //ajout de styles garce a javascript
@@ -113,7 +113,7 @@ const play = (choice) =>{
                 let input = document.getElementById('inputBox')
                input.style.backgroundImage=bgTiède;
                 //emoji =ctr+i
-                message.textContent="C'est tiède ! 🤒🤒🤒";
+                message.textContent="C'est tiède ! 🧯🧯🧯";
             }
             else{
                 //ajout de styles garce a javascript
@@ -121,7 +121,7 @@ const play = (choice) =>{
                 let input = document.getElementById('inputBox')
                input.style.backgroundImage=bgFroid;
                 //emoji =ctr+i
-                message.textContent="C'est Froid ❄️❄️❄️";
+                message.textContent="C'est Froid ☃️☃️☃️";
             }
             vies--;
             //perte de vie a chaque essay rater
@@ -187,3 +187,21 @@ const play = (choice) =>{
     })
 }
 // play();
+
+const theme = document.querySelectorAll('.theme');
+
+theme.forEach((item)=>{
+    item.addEventListener('click', (event)=>{
+        document.body.classList.remove('darkTheme','lightTheme');
+        switch(event.target.id){
+            case"Dark":
+                document.body.classList.add("darkTheme");
+                break;
+            case"Light":
+                document.body.classList.add("lightTheme");
+                break;
+            default:
+                null;
+        }
+    })
+})
